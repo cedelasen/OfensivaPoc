@@ -1,9 +1,11 @@
 FROM ubuntu:18.04
 
 RUN apt update -y
-RUN apt install python3-pip python3-venv iputils-ping git -y
+RUN apt install python3-pip python3-venv iputils-ping git ruby-full -y
 
 RUN python3 -m pip install virtualenv
+
+RUN gem install winrm winrm-fs stringio
 
 WORKDIR /root
 
